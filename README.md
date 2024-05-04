@@ -1,37 +1,25 @@
-# Browser homepage
+# Browser Homepage
 
-Custom browser homepage, for replacing default browser homepage/startpage. It should work on any modern browser, just set `index.html` as your homepage and add your own links
-to the index.html (see Adding links for more informations) 
+Custom browser homepage inspired by https://github.com/GreatDanton/browser-homepage
 
-I had lots of unsorted links laying around and the current bookmarks extensions
-are just horrible mess, so I developed my own idea. Hopefully someone will find this project useful.
-
-
-# [Live Example](https://greatdanton.github.com/browser-homepage)
+It should work on modern browsers similar to the original, just set `index.html` as your homepage and customize to your own liking.
 
 # Features
 
-* Search (on Google or DuckDuckGo)
+* Search
 * Clock
 * Calendar
-* Countdown to custom date
-* Todos built in
+* Countdown/Timer
+* Todo List Built In
 * Organizing links the way you want
 
+The above listed features are included from the original hompeage created by GreatDanton
 
-# Screenshots
+The features listed below are created by BaakaFate for his customization
 
-Main page
-![Main page](screenshots/mainPage.png)
-
-Integrated calendar
-![Calendar](screenshots/calendar.png)
-
-Integrated notes
-![Notes](screenshots/notes.png)
-
-
-
+* Brand new Theme
+* Easier theme customization
+* Theme Selector
 
 # Adding links
 Links should be added directly into `<div class="slides-container"` in index.html page. See below:
@@ -52,93 +40,3 @@ Links should be added directly into `<div class="slides-container"` in index.htm
     </div>
 </div>
 ```
-
-That's the output of above code, if I append it to my index.html
-
-![Above code output](screenshots/addingLinks_img.png)
-
-
-* Div with class slide is used for the name of the button (in line below the clock)
-* h1 is used for displaying the title above the link group. One slide could have many
-link groups
-
-
-
-# Tips for usage
-* Click on clock to display calendar and custom countdown
-* Search input supports bangs (`!command`). Currently supported bangs:
-
-    | command  | arguments | search on |
-    | -------- | --------- | -------   |
-    | !y       | search    | youtube   |
-    | !books   | search    | bookzz    |
-    | !wa      | /         | wolfram alpha |
-    | !e       | /         | ebay      |
-
-    Example usage
-
-        # try typing this in search bar
-        !y How google works    # searches on youtube for: How google works
-        !e                     # opens up ebay.com front page
-
-* Notes are automatically saved when close button (X) in top right corner is pressed. You can also save them manually via `save tasks` button
-
-
-
-# Development:
-The main goal of this project is to provide easy to use interface for sorting
-your links (replacement for current bookmark managers). It was not meant to be all
-around dashboard with integrations with various services. While such services
-might be implemented in the future, the current goal of this project is to
-fix the remaining bugs and clean ugly parts of the code first. The application
-was meant to be a really simple one with everything inlined, however the code
-got quickly out of hand.
-
-
-## Code structure
-
-```
-├── components
-│   ├── calendar.js
-│   ├── clock.js
-│   ├── countdown.js
-│   ├── notes.js
-│   ├── search-box.js
-│   └── slides.js
-├── css
-│   ├── main_min.css
-│   └── main.scss
-```
-
-* Components folder: contains every part/component of the browser homepage.
-    * `calendar.js` -> contains code for displaying calendar when the clock is clicked
-    * `clock.js` -> displays clock & date on the front page
-    * `countdown.js` -> displays countdown under calendar. We can call it inside index.html or inside our own script via `countDown({'y': year, 'm': month, 'd': day}, msg)
-    * `notes.js` -> contains code for managing todo tasks
-    * `search-box.js` -> contains code for search input on the front page
-    * `slides.js` -> code for sliding links part to left or right
-* `index.html` -> your links go here, see template comment inside
-* `main.scss` -> main scss file, (if you would like to change colors change them here) and compile it to main_min.css which is used by index.html
-
-
-# TODO
-
-* Calendar:
-    - [ ] Add animations for month changes in calendar
-    - [ ] Fast month/year selection (via dropdown) on month/year click
-
-* Build system:
-    - [ ] Use modern build system
-        + concatenate all js files into one
-        + auto browser reloading
-        + scss compilation
-
-* Notes:
-    - [ ] Deleting task does not work from time to time
-
-* Load links via JSON:
-    - [ ] Loading links via JSON file would simplify adding and managing
-    links/bookmarks, as well as the actual development process.
-
-# License
-See License file
