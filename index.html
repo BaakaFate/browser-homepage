@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link id="theme" rel="stylesheet" href="original-theme/css/main.css">
+    <link rel="stylesheet" href="theme-selector/style.css"
     <title>&lrm;</title>
 </head>
 
@@ -296,24 +297,31 @@
             </div>
         </div>
 
+        <button id="settings-toggle">Settings</button>
+
+        <div id="settings-container">
+            <!-- settings tab content goes here -->
+          </div>
+        
+          <script src="theme-selector/scripts.js"></script>
 
         <!-- script for clock, calendar, slide transitions -->
-        <script src="components/clock.js"></script>
+        <script src="original-theme/components/clock.js"></script>
 
         <!-- script for custom countdown shown into calendar modal -->
-        <script src="components/countdown.js"></script>
+        <script src="original-theme/components/countdown.js"></script>
 
         <!-- script for generating calendar -->
-        <script src="components/calendar.js"></script>
+        <script src="original-theme/components/calendar.js"></script>
 
         <!-- script for handling search -->
-        <script src="components/search-box.js"></script>
+        <script src="original-theme/components/search-box.js"></script>
 
         <!-- animating slides animations -->
-        <script src="components/slides.js"></script>
+        <script src="original-theme/components/slides.js"></script>
 
         <!-- script for handling todo items -> notes -->
-        <script src="components/notes.js"></script>
+        <script src="original-theme/components/notes.js"></script>
 
         <script>
             // show clock and date under it
